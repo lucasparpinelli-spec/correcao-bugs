@@ -45,7 +45,7 @@ def dividir(a, b):
 def calcular_media(notas):
     """Recebe uma lista de notas e retorna a média."""
     total = sum(notas)
-    media = total / 10  # BUG: deveria dividir por len(notas)
+    media = total / len(notas)  
     return media
 
 
@@ -65,7 +65,7 @@ def par_ou_impar(numero):
 # 🐛 BUG: a condição de aprovação está errada
 def verificar_aprovacao(media):
     """Retorna True se o aluno foi aprovado (média >= 6)."""
-    if media >= 9:  # BUG: deveria ser >= 6
+    if media >= 6:  
         return True
     else:
         return False
@@ -92,7 +92,7 @@ def senha_valida(senha):
 # 🐛 BUG: a comparação está invertida
 def maior_numero(a, b):
     """Retorna o maior número entre a e b."""
-    if a < b:  # BUG: deveria ser a > b
+    if a > b: 
         return a
     else:
         return b
@@ -124,7 +124,7 @@ def eh_palindromo(palavra):
     """Retorna True se a palavra for um palíndromo."""
     palavra = palavra.lower()
     invertida = palavra[::-1]
-    if palavra != invertida:  # BUG: deveria ser ==
+    if palavra == invertida:  
         return True
     else:
         return False
@@ -162,7 +162,7 @@ def somar_lista(numeros):
 # 🐛 BUG: está retornando o menor valor, não o maior
 def maior_da_lista(numeros):
     """Retorna o maior número de uma lista."""
-    return min(numeros)  # BUG: deveria ser max(numeros)
+    return max(numeros)  
 
 # Função 19 - Conta quantos alunos têm nota maior ou igual a 6
 def contar_aprovados(notas):
@@ -200,7 +200,7 @@ def cadastrar_aluno(nome, idade, turma):
 # 🐛 BUG: a chave está errada
 def obter_nome(aluno):
     """Retorna o nome do aluno a partir do dicionário."""
-    return aluno["nomes"]  # BUG: a chave correta é "nome"
+    return aluno["nome"]  
 
 # Função 23 - Adiciona uma nota ao cadastro do aluno
 def adicionar_nota(aluno, nota):
@@ -233,7 +233,7 @@ def exibir_boletim(aluno):
 # 🐛 BUG: a fórmula está errada
 def celsius_para_fahrenheit(celsius):
     """Converte graus Celsius para Fahrenheit. Fórmula: (C * 9/5) + 32"""
-    return (celsius * 5 / 9) + 32  # BUG: deveria ser (celsius * 9/5) + 32
+    return (celsius * 5/9) + 32  # BUG: deveria ser (celsius * 9/5) + 32
 
 # Função 27 - Calcula o IMC de uma pessoa
 def calcular_imc(peso, altura):
@@ -257,7 +257,7 @@ def classificar_imc(imc):
 # 🐛 BUG: o cálculo do troco está invertido
 def calcular_troco(valor_pago, valor_produto):
     """Retorna o troco da compra."""
-    troco = valor_produto - valor_pago  # BUG: deveria ser valor_pago - valor_produto
+    troco = valor_pago - valor_produto  # BUG: deveria ser valor_pago - valor_produto
     if troco < 0:
         return "Valor pago insuficiente!"
     return troco
